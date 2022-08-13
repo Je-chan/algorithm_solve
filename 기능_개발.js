@@ -1,10 +1,10 @@
- function solution(progresses, speeds) {
+function solution(progresses, speeds) {
   var answer = [];
 
   // 기능을 해결해서 배포하기 위해 며칠이 걸리는 지를 계산함
   // 100%가 완료일이므로 (100% - 현재 진행률) / 작업 진행률  => 소숫점으로 나오면 올림
   let takesAbout = progresses.map((el, i) => Math.ceil( (100 - el) / speeds[i] ))
- 
+
   // 배포까지 오래 걸리는 일을 largest라고 정함. 
   let largest = takesAbout[0]
 
