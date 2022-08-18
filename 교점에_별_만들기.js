@@ -41,7 +41,8 @@ function solution(line) {
   let coordinate = Array.from({ length: maxY - minY + 1 }, () =>
     new Array(maxX - minX + 1).fill('.')
   );
-  for (let el of allIntersection) {
+
+  for (const el of allIntersection) {
     coordinate[maxY - el[1]][el[0] - minX] = '*';
   }
 
