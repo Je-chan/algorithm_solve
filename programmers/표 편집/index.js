@@ -1,5 +1,3 @@
-const deleteItem = () => {};
-
 function solution(n, k, cmd) {
   const deletedStack = [];
 
