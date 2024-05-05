@@ -28,4 +28,6 @@ function upperBound(arr, target, start, end) {
 function countByRange(arr, leftValue, rightValue) {
   let rightIndex = upperBound(arr, rightValue, 0, arr.length);
   let leftIndex = lowerBound(arr, leftValue, 0, arr.length);
+
+  return rightIndex - leftIndex;
 }
