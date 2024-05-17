@@ -12,12 +12,12 @@ const { money } = costList.reduce(
     if (acc.cost > cur) {
       return {
         cost: cur,
-        money: acc.money + cur * distanceList[idx],
+        money: BigInt(acc.money) + BigInt(cur * distanceList[idx]),
       };
     } else {
       return {
         cost: acc.cost,
-        money: acc.money + acc.cost * distanceList[idx],
+        money: BigInt(acc.money) + BigInt(acc.cost * distanceList[idx]),
       };
     }
   },
@@ -27,4 +27,4 @@ const { money } = costList.reduce(
   },
 );
 
-console.log(money);
+console.log(String(money));
