@@ -3,7 +3,6 @@ const fs = require("fs");
 const input = fs.readFileSync("../dev/stdin").toString().trim().split("\n");
 
 const changeList = input.slice(1).map(Number);
-
 const minimizeChangeCoin = (change) => {
   let remainedChange = change;
 
@@ -13,7 +12,9 @@ const minimizeChangeCoin = (change) => {
     [5, 0],
     [1, 0],
   ];
+
   let currentCoinIdx = 0;
+
   while (!(remainedChange === 0 || currentCoinIdx === coinList.length)) {
     const [coinValue] = coinList[currentCoinIdx];
 
@@ -29,5 +30,5 @@ const minimizeChangeCoin = (change) => {
 console.log(
   changeList.reduce((acc, cur) => {
     return acc + minimizeChangeCoin(cur) + "\n";
-  }, "")
+  }, ""),
 );
